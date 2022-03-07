@@ -1,4 +1,4 @@
-function checkInput(inputValue: string) {
+function checkInput (inputValue: string) {
     if (inputValue == sequence[inputPosition]) {
         if (inputValue == "A") {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
@@ -35,7 +35,7 @@ input.onPinPressed(TouchPin.P0, function () {
         isInputActive = true
     }
 })
-function showSequence() {
+function showSequence () {
     for (let index = 0; index <= sequence.length - 1; index++) {
         if (sequence[index] == "A") {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
@@ -50,7 +50,7 @@ function showSequence() {
             strip.showColor(neopixel.colors(NeoPixelColors.Orange))
             strip.show()
         }
-        basic.pause(1000)
+        basic.pause(500)
         if (index < sequence.length - 1) {
             basic.showLeds(`
                 . . . . .
@@ -59,7 +59,7 @@ function showSequence() {
                 . . # . .
                 . . . . .
                 `)
-            basic.pause(1000)
+            basic.pause(500)
         }
     }
     basic.showString("?")
@@ -78,11 +78,13 @@ input.onPinPressed(TouchPin.P1, function () {
         isInputActive = true
     }
 })
-function extendSequence() {
+function extendSequence () {
     if (Math.randomBoolean()) {
         sequence.push("A")
-    } else {
+    } else if (Math.randomBoolean()) {
         sequence.push("B")
+    } else {
+        sequence.push("C")
     }
 }
 let strip: neopixel.Strip = null
