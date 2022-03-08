@@ -4,13 +4,14 @@ function checkInput (inputValue: string) {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Red))
             strip.show()
-        } else if (inputValue == "B") {
+        } else {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
             strip.show()
-        } else {
+        }
+        if (inputValue == "C") {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+            strip.showColor(neopixel.colors(NeoPixelColors.Indigo))
             strip.show()
         }
         inputPosition += 1
@@ -39,15 +40,16 @@ function showSequence () {
     for (let index = 0; index <= sequence.length - 1; index++) {
         if (sequence[index] == "A") {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
-            strip.showColor(neopixel.colors(NeoPixelColors.Green))
-            strip.show()
-        } else if (sequence[index] == "B") {
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
-            strip.showColor(neopixel.colors(NeoPixelColors.Violet))
+            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
             strip.show()
         } else {
             strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
-            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+            strip.showColor(neopixel.colors(NeoPixelColors.Green))
+            strip.show()
+        }
+        if (sequence[index] == "C") {
+            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip.showColor(neopixel.colors(NeoPixelColors.Violet))
             strip.show()
         }
         basic.pause(500)
@@ -81,9 +83,10 @@ input.onPinPressed(TouchPin.P1, function () {
 function extendSequence () {
     if (Math.randomBoolean()) {
         sequence.push("A")
-    } else if (Math.randomBoolean()) {
-        sequence.push("B")
     } else {
+        sequence.push("B")
+    }
+    if (Math.randomBoolean()) {
         sequence.push("C")
     }
 }
