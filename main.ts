@@ -61,7 +61,7 @@ function showSequence () {
             strip.showColor(neopixel.rgb(85, 32, 145))
             strip.show()
         }
-        basic.pause(500)
+        basic.pause(200)
         if (index < sequence.length - 1) {
             basic.showLeds(`
                 . . . . .
@@ -70,7 +70,7 @@ function showSequence () {
                 . . # . .
                 . . . . .
                 `)
-            basic.pause(500)
+            basic.pause(200)
         }
     }
     basic.showString("?")
