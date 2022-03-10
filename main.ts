@@ -2,14 +2,14 @@ function checkInput (inputValue: string) {
     if (inputValue == sequence[inputPosition]) {
         if (inputValue == "A") {
             basic.pause(100)
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Red))
             basic.pause(100)
             strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
             strip.show()
         } else {
             basic.pause(100)
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
             basic.pause(100)
             strip.showColor(neopixel.colors(NeoPixelColors.Blue))
@@ -17,7 +17,7 @@ function checkInput (inputValue: string) {
         }
         if (inputValue == "C") {
             basic.pause(100)
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Blue))
             basic.pause(100)
             strip.showColor(neopixel.colors(NeoPixelColors.Red))
@@ -48,16 +48,16 @@ input.onPinPressed(TouchPin.P0, function () {
 function showSequence () {
     for (let index = 0; index <= sequence.length - 1; index++) {
         if (sequence[index] == "A") {
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.rgb(255, 128, 0))
             strip.show()
         } else {
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.colors(NeoPixelColors.Green))
             strip.show()
         }
         if (sequence[index] == "C") {
-            strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
             strip.showColor(neopixel.rgb(85, 32, 145))
             strip.show()
         }
@@ -112,6 +112,6 @@ for (let index = 0; index < 3; index++) {
 basic.pause(1000)
 showSequence()
 isInputActive = true
-strip = neopixel.create(DigitalPin.P3, 15, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
 strip.showRainbow(1, 360)
 strip.show()
