@@ -36,9 +36,16 @@ function checkInput (inputValue: string) {
     } else if (sequence.length > 3) {
         basic.clearScreen()
         basic.showString("Game Over: Score: " + sequence.length)
+        strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        basic.pause(100)
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        basic.pause(100)
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        strip.show()
     } else {
-        basic.clearScreen()
         basic.showString("Game Over: Score: 0")
+        basic.clearScreen()
     }
 }
 input.onPinPressed(TouchPin.P0, function () {
