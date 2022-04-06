@@ -26,6 +26,9 @@ function checkInput (inputValue: string) {
         inputPosition += 1
         if (inputPosition == sequence.length) {
             inputPosition = 0
+            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
+            strip.showRainbow(1, 360)
+            strip.show()
             basic.showIcon(IconNames.Happy)
             extendSequence()
             showSequence()
