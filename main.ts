@@ -26,9 +26,6 @@ function checkInput (inputValue: string) {
         inputPosition += 1
         if (inputPosition == sequence.length) {
             inputPosition = 0
-            strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
-            strip.showRainbow(1, 360)
-            strip.show()
             basic.showIcon(IconNames.Happy)
             extendSequence()
             showSequence()
@@ -36,13 +33,6 @@ function checkInput (inputValue: string) {
     } else if (sequence.length > 3) {
         basic.clearScreen()
         basic.showString("Game Over: Score: " + sequence.length)
-        strip = neopixel.create(DigitalPin.P3, 7, NeoPixelMode.RGB)
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        basic.pause(100)
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        basic.pause(100)
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        strip.show()
     } else {
         basic.showString("Game Over: Score: 0")
         basic.clearScreen()
